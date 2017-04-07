@@ -15,8 +15,17 @@ This project will use the following technologies:
 * Sockets
 * Geolocation
 
-## Trello:
+## [Trello](https://trello.com/b/izCaJd5q/wdi-sm-43-project-4)
 
 ## Data Model:
+![erd](assets/models.JPG)
 
 ## Wireframes:
+Sign Up & Log In:
+![signup_login](assets/signup_login.jpg)
+
+Create Chat:
+![create](assets/create_chat.jpg)
+
+Chat Room:
+![chatroom](assets/create_chat.jpg)
