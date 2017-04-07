@@ -12,7 +12,7 @@ This project will use the following technologies:
 * MEAN stack
 * HTML
 * CSS/Bootstrap 
-* Sockets
+* Socket.io
 * Geolocation
 
 ## [Trello](https://trello.com/b/izCaJd5q/wdi-sm-43-project-4)
