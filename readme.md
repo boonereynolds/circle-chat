@@ -28,4 +28,4 @@ Create Chat:
 ![create](assets/create_chat.jpg)
 
 Chat Room:
-![chatroom](assets/create_chat.jpg)
+![chatroom](assets/chat.jpg)
