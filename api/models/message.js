@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 var messageSchema = new mongoose.Schema({
   body: {type: String, required: true},
   location: {type: [Number], required: true},
-  // userSchema referenced here
+  user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 
 // creates variable for model
