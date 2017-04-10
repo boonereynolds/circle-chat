@@ -1,15 +1,15 @@
 var mongoose = require('mongoose'),
     Message = require('./message')
 
-// creates chatroom schema
-var chatroomSchema = new mongoose.Schema({
+// creates chat schema
+var chatSchema = new mongoose.Schema({
   name: {type: String, required: true},
   location: {type: [Number], required: true},
   messages: [Message.schema]
 })
 
 // creates variable for model
-var Chatroom = mongoose.model('Chatroom', chatroomSchema)
+var Chat = mongoose.model('Chat', chatSchema)
 
 // exports module
-module.exports = Chatroom
+module.exports = Chat
