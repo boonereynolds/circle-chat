@@ -23,11 +23,11 @@ function updateUser(req, res){
   User.find({_id: req.params.id}, function(err, user){
     if (err) res.status(404).send(err)
 
-    if(req.body.username) bean.username = req.body.username
-    if(req.body.email) bean.email = req.body.email
-    if(req.body.password) bean.password = req.body.password
-    if(req.body.location) bean.location = req.body.location
-    if(req.body.chats) bean.chats = req.body.chats
+    if(req.body.username) user.username = req.body.username
+    if(req.body.email) user.email = req.body.email
+    if(req.body.password) user.password = req.body.password
+    if(req.body.location) user.location = req.body.location
+    if(req.body.chats) user.chats = req.body.chats
 
     user.save(function(err){
       if (err) res.status(500).send(err)
