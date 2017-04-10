@@ -6,11 +6,11 @@ var userSchema = new mongoose.Schema({
   email: {type: String, required: true},
   password: {type: String, requires: true},
   location: {type: [Number], required: true},
-  // REFERENCES CHATROOM
+  chats: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 })
 
 // sets variable for model
 var User = mongoose.model('User', userSchema)
 
 // exports module
-module.exports = User 
+module.exports = User
