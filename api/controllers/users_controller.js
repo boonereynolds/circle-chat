@@ -1,4 +1,4 @@
-var User = require('../models.user')
+var User = require('../models/user')
 
 // creates User
 function createUser(req, res){
@@ -20,7 +20,7 @@ function showUser(req, res){
 
 // update a User
 function updateUser(req, res){
-  User.find({_id: req.params.id}, function(err, user){
+  User.findById({_id: req.params.id}, function(err, user){
     if (err) res.status(404).send(err)
 
     if(req.body.username) user.username = req.body.username
@@ -29,7 +29,7 @@ function updateUser(req, res){
     if(req.body.location) user.location = req.body.location
     if(req.body.chats) user.chats = req.body.chats
 
-    user.save(function(err){
+    user.save(function(err, user){
       if (err) res.status(500).send(err)
       res.status(200).send(user)
     })

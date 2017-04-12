@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 // creates chat schema
 var chatSchema = new mongoose.Schema({
   name: {type: String, required: true},
-  location: {type: [Number], required: true},
+  // location: {type: [Number], required: true},
   messages: [Message.schema]
 })
 
