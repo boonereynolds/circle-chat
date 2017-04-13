@@ -23,6 +23,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
 // mount circleRoutes at /api/circlechat
+app.use('/', render.json({message: 'hi fam'}))
 app.use('/api/chats', chatRoutes)
 app.use('/api', userRoutes)
 app.use('/api/messages', messageRoutes)
