@@ -1,34 +1,27 @@
-var Message = require('../models/message')
+// require chat model in this
+var Message = require('../models/message'),
+    Chat    = require('../models/chat')
 
 // create message
 function createMessage(req, res){
-  var message = new Message(req.body)
 
-  message.save(function(err, message){
-    if (err) res.status(500).send(err)
-    res.status(201).send(message)
+
+  // find the chat by its id
+  Chat.findById(req.params.id, function(err, chat){
+    if(err) throw err
+    // create message using req.body
+    var message = new Message(req.body)
+    // push message into chat.messages
+    chat.messages.push(message)
+    // save chat
+    chat.save(function (err, chat){
+        if (err) res.status(500).send(err)
+        res.json(chat)
+    })
   })
 }
-
-function showMessage(req, res){
-  Message.find({_id: req.params.id}, function(err, message){
-    if (err) res.status(404).send(err)
-    res.status(200).send(message)
-  })
-}
-
-function destroyMessage(req, res){
-  Message.remove({_id: req.params.id}, function(err){
-    if (err) res.status(500).send(err)
-    res.status(200).send({message: "Message successfully deleted!"})
-  })
-}
-
-
 
 // exports module
 module.exports = {
-  createMessage: createMessage,
-  showMessage, showMessage,
-  destroyMessage, destroyMessage
+  createMessage: createMessage
 }

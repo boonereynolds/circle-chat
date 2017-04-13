@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
 // creates message schema
 var messageSchema = new mongoose.Schema({
   body: {type: String, required: true},
-  location: {type: [Number], required: true},
+  // location: {type: [Number], required: true},
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 
