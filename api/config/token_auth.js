@@ -1,6 +1,7 @@
 var jwt = require('jsonwebtoken')
 
  var User = require('../models/user')
+ require('dotenv').config()
 
  module.exports = {
    create:       create,
@@ -44,6 +45,7 @@ var jwt = require('jsonwebtoken')
   *     - The response body contains the token that was generated.
   */
  function create(req, res, next) {
+   console.log('starting to create...')
    if (!req.body.email || !req.body.password) {
      var message = 'Missing required fields: email and password'
      return res.status(422).json(message)
