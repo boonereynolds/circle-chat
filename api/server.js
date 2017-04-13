@@ -12,7 +12,8 @@ var express = require('express'),
 require('dotenv').config()
 
 //establish connection to mongo database
-mongoose.connect('mongodb://localhost:27017/circlechat')
+// mongoose.connect('mongodb://localhost:27017/circlechat')
+var db = process.env.MONGODB_URI || 'mongodb://localhost:27017/circlechat'
 
 //log requests made to the app
 app.use(logger('dev'))
