@@ -18,6 +18,19 @@ This project will use the following technologies:
 * Socket.io
 * Geolocation
 
+## Installation Instructions
+* Clone the back end repo
+* Open the directory and run npm install
+* Run nodemon & navigate to localhost:3000
+* Clone the front end repo
+* Open the directory and run server in the terminal
+* Navigate to localhost:8000
+
+## Known Problems
+* Sign in does not work
+* Front end controllers are broken :(
+* Aka nothing works on the front end yet
+
 ## [Trello](https://trello.com/b/izCaJd5q/wdi-sm-43-project-4)
 
 ## Data Model:
